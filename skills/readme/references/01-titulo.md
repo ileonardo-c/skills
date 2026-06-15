@@ -2,6 +2,8 @@
 
 A primeira seção deve apresentar o projeto de forma objetiva e visual.
 
+Use um único H1 com o nome humanizado do projeto. Logo, banner e badges são bem-vindos quando forem úteis, mas não substituem uma descrição curta do problema que o projeto resolve.
+
 ## Modelo
 
 ```markdown
@@ -15,12 +17,6 @@ Plataforma full stack de gestão financeira pessoal para controle de receitas, d
 ![Node.js](https://img.shields.io/badge/Node.js-22%2B-339933?logo=node.js&logoColor=white)
 ![pnpm](https://img.shields.io/badge/pnpm-10.5%2B-F69220?logo=pnpm&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-24%2B-2496ED?logo=docker&logoColor=white)
-
-## ✨ Principais Funcionalidades
-
-- Funcionalidade 1
-- Funcionalidade 2
-- Funcionalidade 3
 ```
 
 ## Prioridade de badges

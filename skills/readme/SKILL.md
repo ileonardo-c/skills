@@ -7,6 +7,8 @@ description: Use esta skill sempre que o usuário pedir para criar, reescrever, 
 
 Você é um redator técnico especialista em criar documentações completas para projetos. Seu objetivo é escrever (ou atualizar) um README.md com qualidade profissional, em Português-Brasil, organizado para leitura e útil para pessoas desenvolvedoras, avaliadores técnicos, recrutadores e mantenedores do projeto.
 
+O README deve seguir o padrão **enxuto operacional**: completo o bastante para entender, executar e validar o projeto, mas sem virar runbook duplicado. Para projetos comuns, mire em aproximadamente 150 a 260 linhas. Projetos maiores podem exceder esse limite quando houver necessidade real, mas nunca repita o mesmo assunto em múltiplas seções.
+
 ## Os Três Propósitos de um README
 
 1. **Desenvolvimento Local** - Ajudar qualquer pessoa desenvolvedora a rodar a aplicação localmente em poucos minutos.
@@ -111,6 +113,21 @@ Caso contrário, prossiga com a exploração e escrita.
 
 ---
 
+## Política Anti-Redundância
+
+Cada assunto deve ter um único lugar principal no README. Outras seções podem citar o assunto em uma frase curta, mas não devem repetir tabelas, listas de variáveis, comandos ou explicações completas.
+
+- **OAuth/autenticação**: documente uma vez, preferencialmente em "Como Executar" quando afetar o ambiente local, ou em um bloco de produção quando for exclusivo de deploy.
+- **Secrets e variáveis sensíveis**: agrupe uma vez. Em CI/CD, deploy ou boas práticas, apenas referencie que os secrets correspondentes precisam existir.
+- **Infraestrutura**: descreva o fluxo e recursos principais em "Arquitetura" ou no bloco de produção; detalhes longos devem apontar para `docs/`, `infra/` ou documentação existente.
+- **CI/CD**: resuma workflows, gatilhos e responsabilidades. Não replique a lista completa de secrets ou comandos já explicados em outra seção.
+- **Testes e validação**: liste comandos reais e quando usar. Não repita comandos de execução local, exceto quando forem parte do smoke test.
+- **Governança**: referencie `AGENTS.md`, `CONTRIBUTING.md`, templates e workflows; não reexplique o conteúdo desses arquivos.
+
+Ao atualizar README existente, procure blocos repetidos sobre OAuth, secrets, infraestrutura, CI, deploy, validação e governança. Consolide antes de adicionar novo texto.
+
+---
+
 ## Atualizando um README Existente
 
 Quando já existir um `README.md` no projeto:
@@ -155,6 +172,7 @@ Quando o projeto for um monorepo (ex.: pnpm workspaces, Turborepo, Nx, múltiplo
 **Organização visual**
 - O README deve ter **um único H1**.
 - Use H2 para as seções principais.
+- Os H2 principais devem usar emojis padronizados, seguindo a estrutura definida nesta skill.
 - Use H3 para subseções.
 - O título não deve ser apenas o slug do repositório.
 - O README pode começar com imagem, logo, banner ou título textual.
@@ -170,13 +188,13 @@ Escreva o README com estas 8 seções, nesta ordem:
 | # | Seção | O que responde |
 |---|-------|----------------|
 | 1 | **Título e Apresentação** | O que é o projeto e qual problema resolve? → modelo em `references/01-titulo.md` |
-| 2 | **Stack Tecnológica** | Quais tecnologias formam o sistema e como estão agrupadas? → modelo em `references/02-stack.md` |
-| 3 | **Funcionalidades Principais** | O que o sistema entrega para o usuário ou domínio de negócio? → modelo em `references/03-funcionalidades.md` |
-| 4 | **Arquitetura** | Como o sistema funciona por dentro? → modelo em `references/04-arquitetura.md` |
-| 5 | **Como Executar** | Como rodar a aplicação localmente do zero? → modelo em `references/05-como-executar.md` |
-| 6 | **Testes** | Como validar o projeto e o que o CI garante? → modelo em `references/06-testes.md` |
-| 7 | **Boas Práticas** | Quais convenções e padrões o time adota? → modelo em `references/07-boas-praticas.md` |
-| 8 | **Governança** | Como o projeto é mantido, revisado e evoluído? → modelo em `references/08-governanca.md` |
+| 2 | **🚀 Stack Tecnológica** | Quais tecnologias formam o sistema e como estão agrupadas? → modelo em `references/02-stack.md` |
+| 3 | **✨ Funcionalidades Principais** | O que o sistema entrega para o usuário ou domínio de negócio? → modelo em `references/03-funcionalidades.md` |
+| 4 | **🏗️ Arquitetura** | Como o sistema funciona por dentro? → modelo em `references/04-arquitetura.md` |
+| 5 | **🖥️ Como Executar** | Como rodar a aplicação localmente do zero? → modelo em `references/05-como-executar.md` |
+| 6 | **🧪 Testes** | Como validar o projeto e o que o CI garante? → modelo em `references/06-testes.md` |
+| 7 | **🛠️ Boas Práticas** | Quais convenções e padrões o time adota? → modelo em `references/07-boas-praticas.md` |
+| 8 | **🧭 Governança** | Como o projeto é mantido, revisado e evoluído? → modelo em `references/08-governanca.md` |
 
 ---
 
@@ -191,5 +209,8 @@ Antes de salvar ou apresentar o README gerado, verifique:
 - [ ] Funcionalidades foram extraídas do código, não assumidas pelo nome do projeto.
 - [ ] Diagrama de arquitetura reflete o stack real (não o exemplo do modelo).
 - [ ] Variáveis de ambiente vieram do `.env.example` ou equivalente.
+- [ ] Não há blocos repetidos de OAuth, secrets, infraestrutura, CI/CD, deploy ou validação.
+- [ ] Os H2 principais usam os emojis padronizados desta skill.
+- [ ] Detalhes extensos foram consolidados ou referenciados em documentação existente, sem duplicar runbooks.
 - [ ] Seções de projetos externos (Roadmap, FAQ, etc.) foram preservadas, se existiam.
 - [ ] O texto está em Português-Brasil sem mistura desnecessária de idiomas.

@@ -4,6 +4,8 @@ A seção de governança deve explicar como o projeto é mantido, revisado e evo
 
 Diferente de "Boas Práticas", esta seção deve **priorizar evidências reais do repositório**. Não invente políticas de branch, commit, versionamento, segurança ou contribuição.
 
+Use esta seção como índice operacional de manutenção. Referencie documentos e workflows existentes; não copie o conteúdo completo de `AGENTS.md`, `CONTRIBUTING.md`, templates de PR ou documentação em `docs/`.
+
 ## Onde procurar evidências
 
 - `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`

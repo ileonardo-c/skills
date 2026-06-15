@@ -2,6 +2,8 @@
 
 A seção de testes deve explicar como validar o projeto localmente e, quando houver CI, como a validação acontece no pipeline.
 
+Liste apenas comandos reais. Se o projeto não tiver suíte unitária, diga isso claramente e documente os checks existentes, como lint, type-check, Docker Compose, smoke test ou preview de infraestrutura.
+
 **Antes de escrever, procure scripts e configurações em:**
 - `package.json`
 - `composer.json`

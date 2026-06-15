@@ -7,7 +7,7 @@ Os grupos (Backend, Frontend, Qualidade & CI) são exemplos. Use apenas os grupo
 ## Modelo
 
 ```markdown
-## 🚀 Tecnologias
+## 🚀 Stack Tecnológica
 
 **Backend**
 
