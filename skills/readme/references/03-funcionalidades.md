@@ -15,6 +15,8 @@ A seção de funcionalidades deve explicar o que o sistema entrega para a pessoa
 - seeds;
 - documentação existente.
 
+Não use esta seção para detalhar configuração, secrets, infraestrutura ou CI/CD. Se uma funcionalidade depende de autenticação, deploy ou serviço externo, cite apenas o impacto para a pessoa usuária e deixe os detalhes operacionais para "Como Executar", "Arquitetura" ou "Governança".
+
 ## Modelo — lista simples
 
 ```markdown

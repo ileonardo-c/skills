@@ -25,6 +25,8 @@ Não preencha esta seção como se todas as práticas fossem regras oficiais do 
 - Se uma prática for inferida pela estrutura do projeto, escreva como inferência.
 - Não invente padrões de commit, branch, PR, testes, design system ou deploy.
 - Evite repetir comandos que já aparecem em "Como Executar" ou "Testes".
+- Evite repetir listas de secrets, variáveis de ambiente ou workflows já documentados em outras seções.
+- Prefira regras operacionais curtas e comprovadas pela estrutura real do repositório.
 - Quando o README for final para produção/open source, prefira remover comentários internos e deixar apenas as práticas realmente adotadas.
 
 ## Modelo genérico (use apenas os blocos aplicáveis ao stack detectado)

@@ -9,6 +9,8 @@ A seção de arquitetura deve explicar como o sistema funciona por dentro. Ela p
 - Serviços externos.
 - Decisões técnicas relevantes.
 
+Mantenha esta seção descritiva e enxuta. Se o projeto já tiver documentação técnica em `docs/`, resuma os componentes principais e linke para o documento em vez de reproduzir todo o runbook.
+
 > **Atenção:** O modelo abaixo (diagrama Mermaid e estrutura de pastas) usa uma stack ilustrativa (React + Fastify + Prisma + PostgreSQL + MinIO/S3). Substitua pelos componentes, serviços, bancos e diretórios **reais** do projeto analisado — não copie a stack do exemplo.
 
 ## Modelo
