@@ -1,0 +1,45 @@
+name: Qualidade
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validar-markdown:
+    name: Validar Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar formato de texto e Markdown
+        run: npm run check
+
+  validar-skill:
+    name: Validar SKILL.md
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        skill:
+          - skills/readme
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Validar ${{ matrix.skill }}
+        uses: Flash-Brew-Digital/validate-skill@v1
+        with:
+          path: ./${{ matrix.skill }}
+          validate-references: "true"
+          fail-on-warning: "false"
