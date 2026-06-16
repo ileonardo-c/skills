@@ -26,6 +26,33 @@ jobs:
       - name: Validar formato de texto e Markdown
         run: npm run check
 
+      - name: Auditar segurança das skills
+        run: npm run check:skill-security
+        continue-on-error: true
+
+      - name: Consultar Trust Hub da skill readme
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          endpoint="https://skills.sh/api/v1/skills/audit/ileonardo-c/skills/readme"
+          response="$(curl --silent --show-error --location --write-out '\n%{http_code}' "$endpoint")"
+          status="$(printf '%s' "$response" | tail -n 1)"
+          body="$(printf '%s' "$response" | sed '$d')"
+
+          echo "skills.sh audit HTTP status: $status"
+
+          if command -v jq >/dev/null 2>&1 && [ -n "$body" ]; then
+            echo "Gen Agent Trust Hub:"
+            printf '%s' "$body" | jq -r '.genAgentTrustHub // .trustHub // .trust_hub // .'
+            echo "Socket:"
+            printf '%s' "$body" | jq -r '.socket // .checks.socket // .security.socket // "não informado"'
+            echo "Snyk:"
+            printf '%s' "$body" | jq -r '.snyk // .checks.snyk // .security.snyk // "não informado"'
+          else
+            echo "$body"
+          fi
+
   validar-skill:
     name: Validar SKILL.md
     runs-on: ubuntu-latest

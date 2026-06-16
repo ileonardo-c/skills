@@ -6,6 +6,10 @@ Diferente de "Boas Práticas", esta seção deve **priorizar evidências reais d
 
 Use esta seção como índice operacional de manutenção. Referencie documentos e workflows existentes; não copie o conteúdo completo de `AGENTS.md`, `CONTRIBUTING.md`, templates de PR ou documentação em `docs/`.
 
+Quando citar CI/CD, deploy ou segurança, referencie a existência e finalidade
+dos secrets necessários sem listar valores reais. Não leia nem copie `.env`,
+`.env.local`, `.env.*.local`, chaves privadas, tokens ou credenciais.
+
 ## Onde procurar evidências
 
 - `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`

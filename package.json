@@ -1,10 +1,11 @@
 {
-  "name": "skills",
+  "name": "skills-sh-ileonardo-c-skills",
   "version": "1.0.0",
   "description": "Coleção de skills para agentes de IA seguindo o padrão Agent Skills",
   "private": true,
   "scripts": {
     "check:text-format": "node scripts/check-text-format.mjs",
+    "check:skill-security": "node scripts/check-skill-security.mjs",
     "check": "npm run check:text-format && npm run lint:md",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\""
