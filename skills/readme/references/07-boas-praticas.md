@@ -26,6 +26,9 @@ Não preencha esta seção como se todas as práticas fossem regras oficiais do 
 - Não invente padrões de commit, branch, PR, testes, design system ou deploy.
 - Evite repetir comandos que já aparecem em "Como Executar" ou "Testes".
 - Evite repetir listas de secrets, variáveis de ambiente ou workflows já documentados em outras seções.
+- Referencie secrets apenas por nome e finalidade, com base em exemplos seguros
+  ou documentação pública do projeto; nunca copie valores reais, tokens,
+  chaves privadas ou credenciais.
 - Prefira regras operacionais curtas e comprovadas pela estrutura real do repositório.
 - Quando o README for final para produção/open source, prefira remover comentários internos e deixar apenas as práticas realmente adotadas.
 

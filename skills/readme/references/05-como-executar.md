@@ -4,6 +4,11 @@ Guia completo de desenvolvimento local: o que precisa estar instalado antes de c
 
 Esta seção deve ser o lugar principal para comandos de execução e configuração local. Agrupe variáveis por tema quando a lista for grande; não repita a mesma lista em CI/CD, governança ou boas práticas.
 
+Documente variáveis de ambiente somente a partir de arquivos de exemplo seguros
+(`.env.example`, `.env.sample`, `.env.template`) ou documentação equivalente
+do projeto. Nunca leia, copie ou transcreva valores reais de `.env`,
+`.env.local`, `.env.*.local`, chaves privadas, tokens ou credenciais.
+
 > O conteúdo abaixo (pré-requisitos, comandos, portas, variáveis de ambiente) é um exemplo de formato. Substitua pelos pré-requisitos, scripts e variáveis reais do projeto.
 
 ## Modelo
@@ -15,7 +20,8 @@ Esta seção deve ser o lugar principal para comandos de execução e configura�
 
 - [Node.js 22+](https://nodejs.org) + [pnpm 10.5+](https://pnpm.io) — `corepack enable`
 - [Docker Desktop 24+](https://www.docker.com/products/docker-desktop/)
-- Nenhum `.env` obrigatório; os scripts carregam `.env.example` automaticamente.
+- Copie `.env.example` para um arquivo local não versionado quando o projeto
+  exigir configuração de ambiente.
 
 ### Desenvolvimento
 
@@ -44,4 +50,4 @@ pnpm dev:down    # encerra tudo e limpa volumes
 | Storage | `AWS_S3_ENDPOINT_PUBLIC` | Não | Endpoint público para upload assinado. |
 ````
 
-Se houver OAuth ou outro provedor de autenticação, explique o modo local e linke para documentação dedicada quando existir. Não replique secrets de produção em mais de uma seção.
+Se houver OAuth ou outro provedor de autenticação, explique o modo local e linke para documentação dedicada quando existir. Documente secrets apenas por nome/finalidade a partir de exemplos seguros; não replique nem transcreva secrets reais de produção em nenhuma seção.
